@@ -1,0 +1,4 @@
+{
+    "image": "aprotopopov/ds-base:retailhero",
+    "entry_point": "gunicorn --bind 0.0.0.0:8000 server:app"
+}
