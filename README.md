@@ -2,13 +2,14 @@
 
 ## Overview
 
+[solution presentation](https://github.com/aprotopopov/retailhero_recommender/tree/master/slides/retailhero_recommender.pdf) (on russian)
+
 - Data preparation, train/valid split are heavily based on excellent [baseline](https://github.com/datagym-ru/retailhero-recomender-baseline) from [@geffy](https://github.com/geffy)
 - Co occurrence of purchased items per transaction
 - User transactions UMAP embeddings
 - Collecting miscellaneous features like `item_cost`, `popularity position`, etc
 - Dataset preparation with saving each chunk as feather DataFrame
 - LightGBM training on pool of items from the MF models, top products and history items
-
 
 ## Steps to prepare data
 
@@ -80,18 +81,22 @@ cd submit
 zip -r model.zip solution/*
 ```
 
-Joint collection and training parts can be launched via `bash train.sh` as well as in notebook `sandbox/GBM.ipynb`
+Joint collection and training parts can be launched via `bash train.sh` as well as via notebook `sandbox/GBM.ipynb`
 
 ## The best achieved results
 
 Scores (NMAP@30):  
-Public: 0.1350  
+Check: 0.1350  
+Public: 0.1339  
 Private: 0.148325  
 Local: 0.155055  
 
-*Note: LightGBM wasn't tuned carefully so potentially higher score is achievable with the current set of features*
+[final submit](https://drive.google.com/file/d/17yR-klDIZ8vXvhTCIAEwkaBqXzuXagsg/view?usp=sharing). Code a bit messier and with less number of features but with better overall result.
 
+*Note: LightGBM wasn't tuned carefully so higher score is achievable with the current set of features*
 
-## License
+## Other participants solutions
 
-This content is released under the [MIT Licence](http://opensource.org/licenses/MIT)
+- [3rd place](https://github.com/geffy/retailhero-recommender-solution) from [@geffy](https://github.com/geffy). [presentation](https://github.com/geffy/retailhero-recommender-solution/blob/master/slides/retailhero-conf.pdf)
+- [8th place](https://github.com/greenwolf-nsk/retailhero-rec) from [@greenwolf-nsk](https://github.com/greenwolf-nsk)
+- [9th place](https://github.com/mike-chesnokov/x5_retailhero_2020_recs) from [@mike-chesnokov](https://github.com/mike-chesnokov)
